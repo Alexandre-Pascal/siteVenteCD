@@ -1,42 +1,3 @@
-<!-- 
-
-<html>
-    <head>
-    <link rel="stylesheet" href="./styles/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Achete un CD .com</title>
-    </head>
-    
-    <body>
-
-       <header>
-           <a id="nomSite" href="cdDispo.php" style="text-decoration:none" > <b>ACHETE-UN-CD.COM</b>  </>
-            
-           <nav>
-               <ul>
-                   <li><a href="#" style="text-decoration:none"><b>Accueil</b></a></li>
-                   <li><a href="#" style="text-decoration:none"><b>Contact</b></a></li>
-                   <li><a href="#" style="text-decoration:none"><b>Panier</b></a></li>
-                   <li> <input type="text" value="Recherche un CD"> </a></li>
-               </ul>
-            </nav>
-
-            <a id="connexion" href=""> <b>Se connecter</b> </a>
-       </header>
-
-       <main>
-        
-
-    
-
-        </main>
-               
-
-    </body>
-
-    <br />
-</html> -->
-
 <?php
         $bdd= "cd"; // Base de données
         $host= "localhost";
@@ -56,6 +17,7 @@
             echo("<li><a href='#home'>Accueil</a></li>");
             echo("<li><a href='#news'>Truc</a></li>");
             echo("<li><a href='#contact'>Informations</a></li>");
+            echo("<li><a href='pages/pageConnexion.php'>Connexion</a></li>");
             echo("<li style='float:right'><a class='active' href='#about'>Panier</a></li>");
         echo("</ul>");
 
@@ -73,13 +35,12 @@
                 echo ("<h2>" . $data['nom'] . "</h2>");
                 echo ($data['auteur'] . "<br/><br/>");
                 echo ($data['genre'] . "<br/>");
-                echo ("<a href='zoom.php' ><img src= ' " . $data['vignette'] . ".jpg ' /></a>"  );
+                echo ("<a href='pages/zoom.php' ><img src= 'vignettes/" . $data['vignette'] . " ' /></a>"  );
             echo("</div>");
             
         }
         echo("</section>");
 
-        // echo("<h3>YOO</h3>");
 
         echo("</body>");
 

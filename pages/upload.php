@@ -12,20 +12,19 @@ if (isset($_POST['cd']) && isset($_POST['artiste']) && isset($_POST['genre']) &&
     $artiste = $_POST['artiste'];
     $genre = $_POST['genre'];
     $vignette = $_FILES['vignette']['name'];
-    echo $vignette;
     $link=mysqli_connect($host,$user,$pass,$bdd) or die( "Impossible de se connecter à la base de données");
     //On crée la requête SQL
     $sql = "INSERT INTO informations (nom, auteur, genre, vignette) VALUES ('$cd', '$artiste', '$genre', '$vignette')";
     //On envoie la requête
     mysqli_query($link,$sql) or die('Erreur SQL !'.$sql.'<br />'.mysqli_error($link));
     //On upload le fichier
-    move_uploaded_file($_FILES['vignette']['tmp_name'], 'vignettes/'.$vignette);
+    move_uploaded_file($_FILES['vignette']['tmp_name'], '../vignettes/'.$vignette);
     //On ferme la connexion
     mysqli_close($link);
     //On affiche un message de réussite
-    echo '<a href="./insererCd.php">Renseignez un autre cd</a>';
+    echo '<a href="insererCd.php">Renseignez un autre cd</a><br />';
     // On affiche un lien pour fermer notre session
-    echo '<a href="./logout.php">Déconnection</a>';
+    echo '<a href="logout.php">Déconnection</a>';
 }
 else
 {
