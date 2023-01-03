@@ -38,15 +38,15 @@
 </html> -->
 
 <?php
-        $bdd= "root"; // Base de données
-        $host= "lakartxela.iutbayonne.univ-pau.fr";
+        $bdd= "cd"; // Base de données
+        $host= "localhost";
         $user= "root"; // Utilisateur
         $pass= "root"; // mp
         $nomtable= "informations"; /* Connection bdd */
 
         $link=mysqli_connect($host,$user,$pass,$bdd) or die( "Impossible de se connecter à la base de données");
 
-        $query1 = "SELECT * FROM cd";
+        $query1 = "SELECT * FROM informations";
 
         $result= mysqli_query($link,$query1); 
 
