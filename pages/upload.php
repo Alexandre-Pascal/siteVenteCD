@@ -22,9 +22,9 @@ if (isset($_POST['cd']) && isset($_POST['artiste']) && isset($_POST['genre']) &&
     //On ferme la connexion
     mysqli_close($link);
     //On affiche un message de réussite
-    echo '<a href="insererCd.php">Renseignez un autre cd</a><br />';
+    echo '<a href="insererCd.php">Retour page administration</a><br />';
     // On affiche un lien pour fermer notre session
-    echo '<a href="logout.php">Déconnection</a>';
+    echo '<a href="logout.php">Déconnexion</a>';
 }
 else
 {

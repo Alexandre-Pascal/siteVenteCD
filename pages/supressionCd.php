@@ -1,7 +1,6 @@
 <?php
 
     if(isset($_POST['nom'])){
-        echo "Le nom est : " . $_POST['nom'];
         $nom = $_POST['nom'];
         suppressionCd($nom);
     }
@@ -19,8 +18,8 @@
         mysqli_close($link);
 
         //On affiche un message de réussite
-        echo '<a href="insererCd.php">Renseignez un autre cd</a><br />';
+        echo '<a href="insererCd.php">Retour page administration</a><br />';
         // On affiche un lien pour fermer notre session
-        echo '<a href="logout.php">Déconnection</a>';
+        echo '<a href="logout.php">Deconnexion</a>';
     }
 ?>

@@ -4,7 +4,6 @@
     $host= "localhost";
     $user= "root"; // Utilisateur
     $pass= "root"; // mp
-    $nomtable= "informations"; /* Connection bdd */
 
     $link=mysqli_connect($host,$user,$pass,$bdd) or die( "Impossible de se connecter à la base de données");
 
