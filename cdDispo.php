@@ -1,52 +1,17 @@
-<!-- 
-
-<html>
-    <head>
-    <link rel="stylesheet" href="./styles/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Achete un CD .com</title>
-    </head>
-    
-    <body>
-
-       <header>
-           <a id="nomSite" href="cdDispo.php" style="text-decoration:none" > <b>ACHETE-UN-CD.COM</b>  </>
-            
-           <nav>
-               <ul>
-                   <li><a href="#" style="text-decoration:none"><b>Accueil</b></a></li>
-                   <li><a href="#" style="text-decoration:none"><b>Contact</b></a></li>
-                   <li><a href="#" style="text-decoration:none"><b>Panier</b></a></li>
-                   <li> <input type="text" value="Recherche un CD"> </a></li>
-               </ul>
-            </nav>
-
-            <a id="connexion" href=""> <b>Se connecter</b> </a>
-       </header>
-
-       <main>
-        
-
-    
-
-        </main>
-               
-
-    </body>
-
-    <br />
-</html> -->
-
 <?php
-        $bdd= "root"; // Base de données
-        $host= "lakartxela.iutbayonne.univ-pau.fr";
+    require_once("fonctions-panier.php");
+
+        $ajout = 0;
+
+        $bdd= "cd"; // Base de données
+        $host= "http://localhost/phpmyadmin/index.php";
         $user= "root"; // Utilisateur
-        $pass= "root"; // mp
+        $pass= ""; // mp
         $nomtable= "informations"; /* Connection bdd */
 
-        $link=mysqli_connect($host,$user,$pass,$bdd) or die( "Impossible de se connecter à la base de données");
+        $link=mysqli_connect("localhost",$user,$pass,$bdd) or die( "Impossible de se connecter à la base de données");
 
-        $query1 = "SELECT * FROM cd";
+        $query1 = "SELECT * FROM informations";
 
         $result= mysqli_query($link,$query1); 
 
@@ -70,19 +35,23 @@
         while ($data = mysqli_fetch_assoc($result)) {
             //on affiche les informations de lenregistrement en cours;
             echo("<div id='cd'>");
-                echo ("<h2>" . $data['nom'] . "</h2>");
-                echo ($data['auteur'] . "<br/><br/>");
-                echo ($data['genre'] . "<br/>");
-                echo ("<a href='zoom.php' ><img src= ' " . $data['vignette'] . ".jpg ' /></a>"  );
+                $nom = $data['nom'];
+                $auteur = $data['auteur'];
+                $genre = $data['genre'];
+                $vignette = $data['vignette'] . ".jpg";
+                $prix = $data['prix'];
+
+                echo ("<h2>" . $nom . "</h2>");
+                echo ($auteur . "<br/><br/>");
+                echo ($genre . "<br/>");
+
+                echo("<a href='zoom.php?nom=$nom&auteur=$auteur&genre=$genre&img=$vignette&prix=$prix'> <img src= $vignette /> </a>");
+
             echo("</div>");
-            
+
         }
+
         echo("</section>");
-
-        // echo("<h3>YOO</h3>");
-
-        echo("</body>");
-
                     
 echo("<style>");
 
@@ -134,8 +103,6 @@ echo("img {");
 echo("}");
 
 echo("</style>");
-     
-        
+?>
 
-        ?>
-
+<input type="button" onclick="window.location.href = 'panier.php';" value="Accéder au panier"/>
