@@ -43,11 +43,10 @@
                 $vignette = "./vignettes/" . $data['vignette'];
                 $prix = $data['prix'];
 
+                echo("<a href='zoom.php?nom=$nom&auteur=$auteur&genre=$genre&img=$vignette&prix=$prix'> <img src= $vignette /> </a>");
                 echo ("<h2>" . $nom . "</h2>");
                 echo ($auteur . "<br/><br/>");
                 echo ($genre . "<br/>");
-
-                echo("<a href='zoom.php?nom=$nom&auteur=$auteur&genre=$genre&img=$vignette&prix=$prix'> <img src= $vignette /> </a>");
 
             echo("</div>");
 
