@@ -21,6 +21,7 @@
             echo("<li><a href='#home'>Accueil</a></li>");
             echo("<li><a href='#news'>Truc</a></li>");
             echo("<li><a href='#contact'>Informations</a></li>");
+            echo("<li><a href='pages/pageConnexion.php'>Connexion</a></li>");
             echo("<li style='float:right'><a class='active' href='#about'>Panier</a></li>");
         echo("</ul>");
 

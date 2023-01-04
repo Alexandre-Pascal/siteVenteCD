@@ -16,6 +16,7 @@ function creationPanier(){
 }
 
 
+
 /**
  * Ajoute un article dans le panier
  * @param string $libelleProduit
