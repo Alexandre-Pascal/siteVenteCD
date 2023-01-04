@@ -114,14 +114,11 @@ echo '<?xml version="1.0" encoding="utf-8"?>';?>
        }
     }
 
-
-    ajouterArticle($_GET['nom'],$_GET['prix']);
-
-
-//PAS BON CA
-
     ?>
 </table>
 </form>
+
+<input type="button" onclick="window.location.href = '../index.php';" value="Accéder a l'accueil"/>
+
 </body>
 </html>

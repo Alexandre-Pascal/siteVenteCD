@@ -1,5 +1,5 @@
 <?php
-    require_once("fonctions-panier.php");
+    
 
         $ajout = 0;
 
@@ -22,7 +22,7 @@
             echo("<li><a href='#news'>Truc</a></li>");
             echo("<li><a href='#contact'>Informations</a></li>");
             echo("<li><a href='pages/pageConnexion.php'>Connexion</a></li>");
-            echo("<li style='float:right'><a class='active' href='#about'>Panier</a></li>");
+            echo("<li style='float:right'><a class='active' href='/pages/panier.php'>Panier</a></li>");
         echo("</ul>");
 
         echo("</head>");
@@ -39,14 +39,15 @@
                 $nom = $data['nom'];
                 $auteur = $data['auteur'];
                 $genre = $data['genre'];
-                $vignette = $data['vignette'] . ".jpg";
+                $vignette = $data['vignette'];
                 $prix = $data['prix'];
 
                 echo ("<h2>" . $nom . "</h2>");
                 echo ($auteur . "<br/><br/>");
                 echo ($genre . "<br/>");
 
-                echo("<a href='zoom.php?nom=$nom&auteur=$auteur&genre=$genre&img=$vignette&prix=$prix'> <img src= $vignette /> </a>");
+                //comenter
+                echo("<a href='/pages/zoom.php?nom=$nom&auteur=$auteur&genre=$genre&img=$vignette&prix=$prix'> <img src= /vignettes/$vignette /> </a>");
 
             echo("</div>");
 
@@ -105,5 +106,3 @@ echo("}");
 
 echo("</style>");
 ?>
-
-<input type="button" onclick="window.location.href = 'panier.php';" value="Accéder au panier"/>

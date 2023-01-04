@@ -19,7 +19,7 @@ echo $genre;
 
 echo("<BR>");
 
-echo("<img src= $vignette />");
+echo("<img src= ../vignettes/$vignette />");
 
 echo("<BR>");
 
@@ -28,7 +28,6 @@ echo($prix . " euros");
 echo("<BR>");
 echo("<BR>");
 
-echo("<a href='panier.php?nom=$nom&prix=$prix&ajout=1'> Ajouter au panier </a>");
-header("Location: panier.php");
+echo("<a href='page-transition.php?nom=$nom&prix=$prix'> Ajouter au panier </a>");
 
 ?>
