@@ -20,11 +20,13 @@
                     echo ('<p id="header-entete"> CD_SHOP </p>');
                     echo ('<nav>');
                         echo ('<ul>');
-                            echo ('<li><a href="pages/panier.php">Administrateur</a></li>');
+                            echo ('<li><a href="pages/pageConnexion.php">Administrateur</a></li>');
                             echo ('<li><a href="pages/panier.php">Panier</a></li>');
                         echo ('</ul>');
                     echo ('</nav>');
                 echo ('</header>');
+
+                echo ('<hr class="trait">');
 
                 echo ('<main>');
 
@@ -50,10 +52,11 @@
 
                 echo ('</main>');
 
+                echo ('<hr class="trait">');
+
                 echo ('<footer>');
                     echo ('<section id="footer-head">');
                         echo ('<p>Copyright : Robin Alonzo - Alexandre Pascal - 2023</p>');
-                        echo ('<hr class="trait">');
                         echo ('<p>Contact : ralonzo@univ-pau.fr - apascal03@univ-pau.fr</p>');
                     echo ('</section>');
                 echo ('</footer>');

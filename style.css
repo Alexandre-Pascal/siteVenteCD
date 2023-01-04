@@ -6,13 +6,10 @@
     font-family: "Poppins Black";
 }
 
-body {
-    background-color: floralwhite;
-}
-
 header {
     display: grid;
     grid-template-columns: 50% 50%;
+    padding: 10px;
 }
 
 nav {
@@ -32,7 +29,7 @@ nav > ul> li > a {
 }
 
 a:hover:not(.active){
-    background-color:#111;
+    background-color: white;
 }
 
 .active{
@@ -55,6 +52,8 @@ a:hover:not(.active){
     margin: 10px;
     padding: 10px;
     background-color: aliceblue;
+    width: 80%;
+    height: 80%;
 }
 
 #cd h2{
@@ -71,12 +70,19 @@ footer {
     margin: 10px;
     margin: 10px;
     text-align: center;
-    background-color: cadetblue;
-    background-size: cover;
     border-radius: 5px;
 }
 
 #footer-head > p {
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+.trait {
+    grid-column: span 2;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    background-color: black;
+    width: 97%;
+    margin: auto;
 }
