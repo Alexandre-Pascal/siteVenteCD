@@ -1,12 +1,9 @@
 <?php
-    
-
-        $ajout = 0;
 
         $bdd= "cd"; // Base de données
-        $host= "localhost";
+        $host= "http://localhost/phpmyadmin/index.php";
         $user= "root"; // Utilisateur
-        $pass= "root"; // mp
+        $pass= ""; // mp
         $nomtable= "informations"; /* Connection bdd */
 
         $link=mysqli_connect("localhost",$user,$pass,$bdd) or die( "Impossible de se connecter à la base de données");
@@ -43,12 +40,11 @@
                 $vignette = "./vignettes/" . $data['vignette'];
                 $prix = $data['prix'];
 
-                echo("<a href='zoom.php?nom=$nom&auteur=$auteur&genre=$genre&img=$vignette&prix=$prix'> <img src= $vignette /> </a>");
                 echo ("<h2>" . $nom . "</h2>");
                 echo ($auteur . "<br/><br/>");
                 echo ($genre . "<br/>");
 
-                //comenter
+                //On rend le lien cliquable et on transmet les valeurs concernées dans le lien
                 echo("<a href='/pages/zoom.php?nom=$nom&auteur=$auteur&genre=$genre&img=$vignette&prix=$prix'> <img src= $vignette /> </a>");
 
             echo("</div>");
