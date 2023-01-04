@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Poppins Black";
+}
+
+header {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 10px;
+}
+
+nav {
+    text-align: right;
+    font-weight: bold;
+}
+
+nav > ul> li {
+    display: inline;
+    padding: 10px;
+    cursor: pointer;
+}
+
+nav > ul> li > a {
+    text-decoration: none;
+    color: black;
+}
+
+nav > ul> li > a:hover:not(.active){
+    background-color: grey;
+    border-radius: 5px;
+}
+
+.active{
+    background-color:#04AA6D;
+}
+
+#panier{
+    font-size: 30px;
+}
+
+.tab {
+    margin-left: auto;
+    margin-right: auto;
+    border:2px solid black;
+    text-align: center; 
+  }
+
+td{
+    border:1px solid black;
+    text-align: center;
+}
+
+#commande{
+    font-size: 25px;
+    margin: 1%;
+    padding: 2px;
+}
+
+.trait {
+    grid-column: span 2;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    background-color: black;
+    width: 97%;
+    margin: auto;
+}

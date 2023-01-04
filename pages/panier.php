@@ -39,20 +39,37 @@ if (!$erreur){
 
 <!DOCTYPE html>
 <head>
+<link rel="stylesheet" href="./stylePanier.css"/>
 <title>Votre panier</title>
 </head>
+<header>
+   <p id="header-entete"> CD_SHOP </p>
+   <nav>
+      <ul>
+            <li><a href="../index.php">Accueil</a></li>
+      </ul>
+   </nav>
+</header>
+
+<hr class="trait">
+
 <body>
 
-<table style="width: 400px">
-    <tr>
-        <td colspan="4">Votre panier</td>
-    </tr>
-    <tr>
-        <td>Nom Album</td>
-        <td>Quantité</td>
-        <td>Prix Unitaire</td>
-        <td> </td>
-    </tr>
+<br><br><br>
+
+<section id="panier">
+   <form method="post" action="panier.php">
+   <table class="tab" style="width: 800px">
+      <tr>
+         <td colspan="4">Votre panier</td>
+      </tr>
+      <tr>
+         <td>Nom Album</td>
+         <td>Quantité</td>
+         <td>Prix Unitaire</td>
+         <td> </td>
+      </tr>
+</section>
 
     <?php
 
@@ -60,11 +77,8 @@ if (!$erreur){
     {
        $nbArticles=count($_SESSION['panier']['libelleProduit']);
        if ($nbArticles <= 0){
-           $html = '<tr><td>Votre panier est vide </ td></tr>';
-           echo $html;
-           echo "<form method='post' action='../index.php'>";
-                echo "<tr><td><input type='submit' value='Revenir à la page principale'></td></tr>";
-           echo "</form>";
+           echo'<tr><td>Votre panier est vide </ td></tr>';
+           
 
        }
        else
@@ -75,19 +89,19 @@ if (!$erreur){
              echo "<td>".htmlspecialchars($_SESSION['panier']['libelleProduit'][$i])."</ td>";
              echo "<td>" .htmlspecialchars($_SESSION['panier']['qteProduit'][$i])."</td>";
              echo "<td>".htmlspecialchars($_SESSION['panier']['prixProduit'][$i])."</td>";
-             echo "<td><a href=\"".htmlspecialchars("panier.php?action=suppression&l=".rawurlencode($_SESSION['panier']['libelleProduit'][$i]))."\">Supprimer CD</a></td>";
+             echo "<td><a href=\"".htmlspecialchars("panier.php?action=suppression&l=".rawurlencode($_SESSION['panier']['libelleProduit'][$i]))."\">Supprimer</a></td>";
              echo "</tr>";
           }
 
           echo "<tr><td colspan='2'> </td>";
           echo "<td colspan='2'>";
-          echo "Total : ".MontantGlobal();
+          echo "Total : ".MontantGlobal() . " euros </td>"; 
           //Passer la commande
            echo "<form method='post' action='../index.php'>";
-                echo "<tr><td><input type='submit' value='Revenir à la page principale'></td></tr>";
+               //  echo "<tr><td><input type='submit' id='acceuil' value='Revenir à la page principale'></td></tr>";
            echo "</form>";
            echo "<form method='post' action='commander.php'>";
-                echo "<tr><td><input type='submit' value='Passer la commande'></td></tr>";
+               echo "<tr><td colspan='4'><input id='commande' type='submit' value='Passer à la commande'></td></tr>";
            echo "</form>";
           
        }

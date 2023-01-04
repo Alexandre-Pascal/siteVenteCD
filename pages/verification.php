@@ -21,7 +21,5 @@ echo '<body onLoad="alert(\'Carte invalide\')">';
 echo '<meta http-equiv="refresh" content="0;URL=commander.php">';
 }
 
-
-
 ?>
 
