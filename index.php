@@ -1,16 +1,21 @@
 <?php
 
+        //Accées à la base de donnée
         $bdd= "cd"; // Base de données
         $host= "localhost";
         $user= "root"; // Utilisateur
         $pass= "root"; // mp
 
+        //Connexion à la base de donnée
         $link=mysqli_connect($host,$user,$pass,$bdd) or die( "Impossible de se connecter à la base de données");
 
+        //Requête SQL
         $query1 = "SELECT * FROM informations";
 
+        //Résultat de la requête
         $result= mysqli_query($link,$query1); 
 
+        //Creation de notre page
         echo('<head>');
             echo ('<link rel="stylesheet" href="style.css" />');
         echo('</head>');
@@ -31,6 +36,7 @@
 
                     echo('<section id="tableau">');
 
+                    //Parcours des résultats pour pouvoir afficher les CD
                     while ($data = mysqli_fetch_assoc($result)) {
                         //on affiche les informations de lenregistrement en cours;
                         echo("<div id='cd'>");
@@ -40,6 +46,7 @@
                         $vignette = "./vignettes/" . $data['vignette'];
                         $prix = $data['prix'];
 
+                        //Cliquez sur l'image permet d'accéder au détail du CD
                         echo("<a href='pages/zoom.php?nom=$nom&auteur=$auteur&genre=$genre&img=$vignette&prix=$prix'> <img src= $vignette /> </a>");
                         echo("<h2>" . $nom . "</h2>");
                         echo($auteur . "<br/><br/>");
