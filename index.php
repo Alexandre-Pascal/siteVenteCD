@@ -1,5 +1,5 @@
 <?php
-    require_once("fonctions-panier.php");
+    
 
         $ajout = 0;
 
@@ -30,6 +30,7 @@
 
                 echo ('<main>');
 
+
         echo('<section id="tableau">');
 
         while ($data = mysqli_fetch_assoc($result)) {
@@ -46,6 +47,9 @@
                 echo ($auteur . "<br/><br/>");
                 echo ($genre . "<br/>");
 
+                //comenter
+                echo("<a href='/pages/zoom.php?nom=$nom&auteur=$auteur&genre=$genre&img=$vignette&prix=$prix'> <img src= $vignette /> </a>");
+
             echo("</div>");
 
         }
@@ -53,5 +57,3 @@
         echo("</section>");
 
 ?>
-
-<input type="button" onclick="window.location.href = 'panier.php';" value="Accéder au panier"/>
