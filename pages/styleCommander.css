@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
 * {
     padding: 0px;
     margin: 0px;
@@ -37,28 +35,6 @@ nav > ul> li > a:hover:not(.active){
     background-color:#04AA6D;
 }
 
-#panier{
-    font-size: 30px;
-}
-
-.tab {
-    margin-left: auto;
-    margin-right: auto;
-    border:2px solid black;
-    text-align: center; 
-  }
-
-td{
-    border:1px solid black;
-    text-align: center;
-}
-
-#commande{
-    font-size: 25px;
-    margin: 1%;
-    padding: 2px;
-}
-
 .trait {
     grid-column: span 2;
     border: 2px solid rgb(0, 0, 0);
@@ -66,4 +42,9 @@ td{
     background-color: black;
     width: 97%;
     margin: auto;
+}
+
+#informations{
+    border:2px solid black;
+    text-align: center;
 }

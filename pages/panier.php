@@ -42,26 +42,24 @@ if (!$erreur){
 <link rel="stylesheet" href="./stylePanier.css"/>
 <title>Votre panier</title>
 </head>
+<header>
+   <p id="header-entete"> CD_SHOP </p>
+   <nav>
+      <ul>
+            <li><a href="../index.php">Accueil</a></li>
+      </ul>
+   </nav>
+</header>
+
+<hr class="trait">
+
 <body>
 
-<<<<<<< HEAD
-<br><br><br><br><br>
-=======
-<table style="width: 400px">
-    <tr>
-        <td colspan="4">Votre panier</td>
-    </tr>
-    <tr>
-        <td>Nom Album</td>
-        <td>Quantité</td>
-        <td>Prix Unitaire</td>
-        <td> </td>
-    </tr>
->>>>>>> d25cbad67cfca4391f22b830d4096604022673fd
+<br><br><br>
 
 <section id="panier">
    <form method="post" action="panier.php">
-   <table class="center" style="width: 800px">
+   <table class="tab" style="width: 800px">
       <tr>
          <td colspan="4">Votre panier</td>
       </tr>
@@ -72,23 +70,16 @@ if (!$erreur){
          <td> </td>
       </tr>
 </section>
+
     <?php
 
     if (creationPanier())
     {
        $nbArticles=count($_SESSION['panier']['libelleProduit']);
        if ($nbArticles <= 0){
-<<<<<<< HEAD
-       echo "<tr><td>Votre panier est vide </td></tr>";
-   
-=======
-           $html = '<tr><td>Votre panier est vide </ td></tr>';
-           echo $html;
-           echo "<form method='post' action='../index.php'>";
-                echo "<tr><td><input type='submit' value='Revenir à la page principale'></td></tr>";
-           echo "</form>";
+           echo'<tr><td>Votre panier est vide </ td></tr>';
+           
 
->>>>>>> d25cbad67cfca4391f22b830d4096604022673fd
        }
        else
        {
@@ -104,30 +95,18 @@ if (!$erreur){
 
           echo "<tr><td colspan='2'> </td>";
           echo "<td colspan='2'>";
-          echo "Total : ".MontantGlobal();
+          echo "Total : ".MontantGlobal() . " euros </td>"; 
           //Passer la commande
            echo "<form method='post' action='../index.php'>";
-                echo "<tr><td><input type='submit' value='Revenir à la page principale'></td></tr>";
+               //  echo "<tr><td><input type='submit' id='acceuil' value='Revenir à la page principale'></td></tr>";
            echo "</form>";
            echo "<form method='post' action='commander.php'>";
-                echo "<tr><td><input type='submit' value='Passer la commande'></td></tr>";
+               echo "<tr><td colspan='4'><input id='commande' type='submit' value='Passer à la commande'></td></tr>";
            echo "</form>";
           
        }
     }
 
-<<<<<<< HEAD
-    ?>
-</table>
-
-<section id="boutons">
-   <input id="acceuil"type="button" onclick="window.location.href = '../index.php';" value="Accéder a l'accueil"/>
-   <button id="commande" onclick="window.location.href = 'commander.php' ;">Passer la commande</button>
-</section>
-</body>
-</html>
-=======
 
 
     ?>
->>>>>>> d25cbad67cfca4391f22b830d4096604022673fd
