@@ -118,7 +118,7 @@ function MontantGlobal(){
    $total=0;
    for($i = 0; $i < count($_SESSION['panier']['libelleProduit']); $i++)
    {
-      $total += $_SESSION['panier']['qteProduit'][$i] * $_SESSION['panier']['prixProduit'][$i];
+      $total += $_SESSION['panier']['qteProduit'][$i] * (int)$_SESSION['panier']['prixProduit'][$i];
    }
    return $total;
 }

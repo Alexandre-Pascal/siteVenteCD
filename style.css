@@ -6,6 +6,10 @@
     font-family: "Poppins Black";
 }
 
+body {
+    background-color: floralwhite;
+}
+
 header {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -40,9 +44,10 @@ a:hover:not(.active){
     display: grid;
     grid-template-columns: auto auto auto;
     text-align:center;
-    border: 3px solid rgb(0, 0, 0);
     border-radius: 5px;
     margin: 10px;
+    margin: 10px;
+    background-color: lightslategrey;
 }
 
 #cd{
@@ -50,6 +55,7 @@ a:hover:not(.active){
     border-radius: 5px;
     margin: 10px;
     padding: 10px;
+    background-color: aliceblue;
 }
 
 #cd h2{
@@ -59,4 +65,19 @@ a:hover:not(.active){
 img {
     width : 100px;
     height : 100px;
+    border-radius: 5px;
+}
+
+footer {
+    margin: 10px;
+    margin: 10px;
+    text-align: center;
+    background-color: cadetblue;
+    background-size: cover;
+    border-radius: 5px;
+}
+
+#footer-head > p {
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
