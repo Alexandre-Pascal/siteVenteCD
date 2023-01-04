@@ -39,29 +39,33 @@ if (!$erreur){
 
 <!DOCTYPE html>
 <head>
+<link rel="stylesheet" href="./stylePanier.css"/>
 <title>Votre panier</title>
 </head>
 <body>
 
-<form method="post" action="panier.php">
-<table style="width: 400px">
-    <tr>
-        <td colspan="4">Votre panier</td>
-    </tr>
-    <tr>
-        <td>Nom Album</td>
-        <td>Quantité</td>
-        <td>Prix Unitaire</td>
-        <td> </td>
-    </tr>
+<br><br><br><br><br>
 
+<section id="panier">
+   <form method="post" action="panier.php">
+   <table class="center" style="width: 800px">
+      <tr>
+         <td colspan="4">Votre panier</td>
+      </tr>
+      <tr>
+         <td>Nom Album</td>
+         <td>Quantité</td>
+         <td>Prix Unitaire</td>
+         <td> </td>
+      </tr>
+</section>
     <?php
 
     if (creationPanier())
     {
        $nbArticles=count($_SESSION['panier']['libelleProduit']);
        if ($nbArticles <= 0){
-       echo "<tr><td>Votre panier est vide</td></tr>";
+       echo "<tr><td>Votre panier est vide </td></tr>";
    
        }
        else
@@ -72,7 +76,7 @@ if (!$erreur){
              echo "<td>".htmlspecialchars($_SESSION['panier']['libelleProduit'][$i])."</ td>";
              echo "<td>" .htmlspecialchars($_SESSION['panier']['qteProduit'][$i])."</td>";
              echo "<td>".htmlspecialchars($_SESSION['panier']['prixProduit'][$i])."</td>";
-             echo "<td><a href=\"".htmlspecialchars("panier.php?action=suppression&l=".rawurlencode($_SESSION['panier']['libelleProduit'][$i]))."\">Supprimer CD</a></td>";
+             echo "<td><a href=\"".htmlspecialchars("panier.php?action=suppression&l=".rawurlencode($_SESSION['panier']['libelleProduit'][$i]))."\">Supprimer</a></td>";
              echo "</tr>";
           }
 
@@ -85,11 +89,10 @@ if (!$erreur){
 
     ?>
 </table>
-</form>
 
-<input type="button" onclick="window.location.href = '../index.php';" value="Accéder a l'accueil"/>
-
-<button id="commande" onclick="window.location.href = 'commander.php' ;">Passer la commande</button>
-
+<section id="boutons">
+   <input id="acceuil"type="button" onclick="window.location.href = '../index.php';" value="Accéder a l'accueil"/>
+   <button id="commande" onclick="window.location.href = 'commander.php' ;">Passer la commande</button>
+</section>
 </body>
 </html>

@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Poppins Black";
+}
+
+#panier{
+    font-size: 30px;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    border:2px solid black;
+    text-align: center;
+  }
+
+td{
+    border:1px solid black;
+}
+
+#boutons{
+    text-align: center;
+    padding-top: 5px;
+}
+
+#commande{
+    font-size: 25px;
+}
+
+#acceuil{
+    font-size: 25px;
+}
