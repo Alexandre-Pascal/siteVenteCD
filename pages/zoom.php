@@ -19,7 +19,7 @@ echo $genre;
 
 echo("<BR>");
 
-echo("<img src= ../vignettes/$vignette />");
+echo("<img src= ../$vignette />");
 
 echo("<BR>");
 
