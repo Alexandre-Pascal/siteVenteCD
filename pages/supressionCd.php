@@ -18,8 +18,7 @@
         mysqli_close($link);
 
         //On affiche un message de réussite
-        echo '<a href="insererCd.php">Retour page administration</a><br />';
-        // On affiche un lien pour fermer notre session
-        echo '<a href="logout.php">Deconnexion</a>';
+        header('Location: ./administration.php');
+
     }
 ?>
