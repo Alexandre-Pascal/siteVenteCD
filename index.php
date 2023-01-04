@@ -4,7 +4,7 @@
         $bdd= "cd"; // Base de données
         $host= "localhost";
         $user= "root"; // Utilisateur
-        $pass= "root"; // mp
+        $pass= ""; // mp
 
         //Connexion à la base de donnée
         $link=mysqli_connect($host,$user,$pass,$bdd) or die( "Impossible de se connecter à la base de données");
