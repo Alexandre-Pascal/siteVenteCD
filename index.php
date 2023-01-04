@@ -12,22 +12,21 @@
 
         $result= mysqli_query($link,$query1); 
 
-        echo("<head>");
-        echo ('<link rel="stylesheet" href="style.css" />');
+        echo('<head>');
+            echo ('<link rel="stylesheet" href="style.css" />');
+        echo('</head>');
+            echo('<body>');
+                echo ('<header>');
+                    echo ('<p id="header-entete"> CD_SHOP </p>');
+                    echo ('<nav>');
+                        echo ('<ul>');
+                            echo ('<li><a href="panier.php">Panier</a></li>');
+                        echo ('</ul>');
+                    echo ('</nav>');
+                echo ('</header>');
 
-        echo("<ul>");
-            echo("<li><a href='#home'>Accueil</a></li>");
-            echo("<li><a href='#news'>Truc</a></li>");
-            echo("<li><a href='#contact'>Informations</a></li>");
-            echo("<li><a href='pages/pageConnexion.php'>Connexion</a></li>");
-            echo("<li style='float:right'><a class='active' href='/pages/panier.php'>Panier</a></li>");
-        echo("</ul>");
+                echo ('<main>');
 
-        echo("</head>");
-
-        echo("<br/><br/><br/>");
-
-        echo("<body>");
 
         echo('<section id="tableau">');
 
