@@ -4,10 +4,10 @@
 
     if (isset($_SESSION['login']) && isset($_SESSION['pwd'])) {
         //Variable pour la base de donnée
-        $bdd = "cd"; // Base de données
-        $host = "localhost"; //Hote
-        $user = "root"; // Utilisateur
-        $pass = "root"; // Mot de passe
+        $bdd= "robinalonzo_bd_cd_iut"; // Base de données
+        $host= "mysql-robinalonzo.alwaysdata.net";
+        $user= "294837_robin"; // Utilisateur
+        $pass= "iutbayonne"; // mp
 
         //On se connecte à la base de données
         $link = mysqli_connect($host, $user, $pass, $bdd) or die("Impossible de se connecter à la base de données");

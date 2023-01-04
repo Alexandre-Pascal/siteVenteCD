@@ -2,10 +2,10 @@
 //On test si les variables sont définies*
 if (isset($_POST['cd']) && isset($_POST['artiste']) && isset($_POST['genre']) && is_uploaded_file($_FILES['vignette']['tmp_name'])) {
     //On se connecte à la base de données
-    $bdd= "cd"; // Base de données
-    $host= "localhost";
-    $user= "root"; // Utilisateur
-    $pass= "root"; // mp
+    $bdd= "robinalonzo_bd_cd_iut"; // Base de données
+    $host= "mysql-robinalonzo.alwaysdata.net";
+    $user= "294837_robin"; // Utilisateur
+    $pass= "iutbayonne"; // mp
     $nomtable= "informations"; /* Connection bdd */
     //On récupère les valeurs des variables
     $cd = $_POST['cd'];

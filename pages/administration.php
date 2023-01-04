@@ -37,7 +37,6 @@ if (isset($_SESSION['login']) && isset($_SESSION['pwd'])) {
                 echo ('</form>');
             echo ('</section>');
         echo ('</body>');
-    echo ('</html>');
 
 }
 else {

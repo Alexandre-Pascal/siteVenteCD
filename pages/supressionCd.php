@@ -5,10 +5,10 @@
         suppressionCd($nom);
     }
     function suppressionCd($nomCd){
-        $bdd= "cd"; // Base de données
-        $host= "localhost";
-        $user= "root"; // Utilisateur
-        $pass= "root"; // mp
+        $bdd= "robinalonzo_bd_cd_iut"; // Base de données
+        $host= "mysql-robinalonzo.alwaysdata.net";
+        $user= "294837_robin"; // Utilisateur
+        $pass= "iutbayonne"; // mp
 
         $link=mysqli_connect($host,$user,$pass,$bdd) or die( "Impossible de se connecter à la base de données");
 
