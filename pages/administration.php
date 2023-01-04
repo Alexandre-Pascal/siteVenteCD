@@ -7,10 +7,20 @@ session_start ();
 if (isset($_SESSION['login']) && isset($_SESSION['pwd'])) {
     echo ('<head>');
         echo ('<title>Administration du site</title>');
+        echo ('<link rel="stylesheet" href="./styleAdministration.css"/>');
     echo ('</head>');
         echo ('<body>');
+            echo ('<header>');
+            echo ('<p id="header-entete"> CD_SHOP </p>');
+                echo ('<nav>');
+                echo ('<ul>');
+                    echo ('<li><a href="logout.php">Deconnexion</a></li>');
+                echo ('</ul>');
+            echo ('</nav>');
+            echo ('<h1>Administration du site</h1>');
+            echo ('</header>');
             echo ('<section id="ajout">');
-                echo ('<h1>Ajouter un CD</h1>');
+                echo ('<h3>Ajouter un CD</h3>');
                 echo ('<form enctype="multipart/form-data" action="upload.php" method="post">');
                     echo ('Nom du cd : <input type="text" name="cd"><br />');
                     echo ('Nom de l\'artiste : <input type="text" name="artiste"><br />');
@@ -21,7 +31,7 @@ if (isset($_SESSION['login']) && isset($_SESSION['pwd'])) {
             echo ('</section>');
 
             echo ('<section id="suppression">');
-                echo ('<h1>Supprimer un CD</h1>');
+                echo ('<h3>Supprimer un CD</h3>');
                 echo ('<form action="supprimerCd.php" method="post">');
                     echo ('<input type="submit" value="Supprimer un CD">');
                 echo ('</form>');

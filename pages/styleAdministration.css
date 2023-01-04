@@ -33,55 +33,38 @@ nav > ul> li > a:hover:not(.active){
     border-radius: 5px;
 }
 
-.active{
-    background-color:#04AA6D;
+h1 {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    grid-column: span 2;
+    padding: 10px;
 }
 
-
-#tableau{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    text-align:center;
-    margin: 10px;
-    margin: 10px;
+h3 {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    grid-column: span 2;
+    padding: 10px;
 }
 
-#cd{
+#ajout{
     border: 5px solid black;
     border-radius: 10px;
-    border-color: black;
-    margin: 10px;
-    padding: 10px;
-    background-color: aliceblue;
-    width: 80%;
-    height: 80%;
+    padding: 5px;
+    margin: 50px;
 }
 
-
-#cd h2{
-    text-align:center;
+#suppression{
+    border: 5px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 50px;
 }
 
-img {
-    width : 100px;
-    height : 100px;
-    border-radius: 5px;
-}
-
-img:hover{
-    transform:scale(1.1);
-}
-
-footer {
-    margin: 10px;
-    margin: 10px;
-    text-align: center;
-    border-radius: 5px;
-}
-
-#footer-head > p {
-    padding-top: 20px;
-    padding-bottom: 20px;
+input{
+    width: 100%;
 }
 
 .trait {
@@ -90,7 +73,4 @@ footer {
     border-radius: 5px;
     background-color: black;
     width: 97%;
-    margin: auto;
 }
-
-
