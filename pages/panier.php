@@ -43,7 +43,6 @@ if (!$erreur){
 </head>
 <body>
 
-<form method="post" action="panier.php">
 <table style="width: 400px">
     <tr>
         <td colspan="4">Votre panier</td>
@@ -61,8 +60,12 @@ if (!$erreur){
     {
        $nbArticles=count($_SESSION['panier']['libelleProduit']);
        if ($nbArticles <= 0){
-       echo "<tr><td>Votre panier est vide</td></tr>";
-   
+           $html = '<tr><td>Votre panier est vide </ td></tr>';
+           echo $html;
+           echo "<form method='post' action='../index.php'>";
+                echo "<tr><td><input type='submit' value='Revenir à la page principale'></td></tr>";
+           echo "</form>";
+
        }
        else
        {
@@ -78,18 +81,18 @@ if (!$erreur){
 
           echo "<tr><td colspan='2'> </td>";
           echo "<td colspan='2'>";
-          echo "Total : ".MontantGlobal() . " euros";
+          echo "Total : ".MontantGlobal();
+          //Passer la commande
+           echo "<form method='post' action='../index.php'>";
+                echo "<tr><td><input type='submit' value='Revenir à la page principale'></td></tr>";
+           echo "</form>";
+           echo "<form method='post' action='commander.php'>";
+                echo "<tr><td><input type='submit' value='Passer la commande'></td></tr>";
+           echo "</form>";
           
        }
     }
 
+
+
     ?>
-</table>
-</form>
-
-<input type="button" onclick="window.location.href = '../index.php';" value="Accéder a l'accueil"/>
-
-<button id="commande" onclick="window.location.href = 'commander.php' ;">Passer la commande</button>
-
-</body>
-</html>
