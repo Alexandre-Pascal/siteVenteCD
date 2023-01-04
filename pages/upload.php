@@ -22,7 +22,8 @@ if (isset($_POST['cd']) && isset($_POST['artiste']) && isset($_POST['genre']) &&
     //On ferme la connexion
     mysqli_close($link);
     //On revient à la page d'administration
-    header('Location: ./administration.php');
+
+    header('Location: ../index.php');
 }
 else
 {
