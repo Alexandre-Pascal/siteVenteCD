@@ -32,16 +32,17 @@
                     while ($data = mysqli_fetch_assoc($result)) {
                         //on affiche les informations de lenregistrement en cours;
                         echo("<div id='cd'>");
-                            $nom = $data['nom'];
-                            $auteur = $data['auteur'];
-                            $genre = $data['genre'];
-                            $vignette = "./vignettes/" . $data['vignette'];
-                            $prix = $data['prix'];
+                        $nom = $data['nom'];
+                        $auteur = $data['auteur'];
+                        $genre = $data['genre'];
+                        $vignette = "./vignettes/" . $data['vignette'];
+                        $prix = $data['prix'];
 
-                            echo("<a href='pages/zoom.php?nom=$nom&auteur=$auteur&genre=$genre&img=$vignette&prix=$prix'> <img src= $vignette /> </a>");
-                            echo ("<h2>" . $nom . "</h2>");
-                            echo ($auteur . "<br/><br/>");
-                            echo ($genre . "<br/>");
+                        echo("<a href='pages/zoom.php?nom=$nom&auteur=$auteur&genre=$genre&img=$vignette&prix=$prix'> <img src= $vignette /> </a>");
+                        echo("<h2>" . $nom . "</h2>");
+                        echo($auteur . "<br/><br/>");
+                        echo($genre . "<br/>");
+                    };
 
                     echo("</section>");
                 echo ('</main>');
