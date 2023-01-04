@@ -1,21 +1,30 @@
-ul{
-    list-style-type:none;
-    margin:0;
-    padding:0;
-    overflow:hidden;
-    background-color:#333;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Poppins Black";
 }
 
-li{
-    float:left;
+header {
+    display: grid;
+    grid-template-columns: 50% 50%;
 }
 
-li a{
-    display:block;
-    color:white;
-    text-align:center;
-    padding:14px;
-    text-decoration:none;
+nav {
+    text-align: right;
+    font-weight: bold;
+}
+
+nav > ul> li {
+    display: inline;
+    padding: 10px;
+    cursor: pointer;
+}
+
+nav > ul> li > a {
+    text-decoration: none;
+    color: black;
 }
 
 a:hover:not(.active){
@@ -31,11 +40,14 @@ a:hover:not(.active){
     display: grid;
     grid-template-columns: auto auto auto;
     text-align:center;
-    border: 1px solid rgb(0, 0, 0);
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    margin: 10px;
 }
 
 #cd{
-    border: 1px solid rgb(0, 0, 0);
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 5px;
     margin: 10px;
     padding: 10px;
 }
