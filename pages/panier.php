@@ -4,33 +4,19 @@ include_once("fonctions-panier.php");
 
 $erreur = false;
 
-$action = (isset($_POST['action'])? $_POST['action']:  (isset($_GET['action'])? $_GET['action']:null )) ;
+// $action reçoit une action si c'est défini ou null s'il n'y en a aucune
+$action = (isset($_GET['action'])? $_GET['action']:null ) ;
 if($action !== null)
 {
-   if(!in_array($action,array('ajout', 'suppression', 'refresh')))
+   //Si l'action n'est pas un ajout ou une supression alors on n'appellera pas les methodes ajouter et suprrimer
+   if(!in_array($action,array('ajout', 'suppression'))){
    $erreur=true;
-
-   //récupération des variables en POST ou GET
-   $l = (isset($_POST['l'])? $_POST['l']:  (isset($_GET['l'])? $_GET['l']:null )) ;
-   $p = (isset($_POST['p'])? $_POST['p']:  (isset($_GET['p'])? $_GET['p']:null )) ;
-   $q = (isset($_POST['q'])? $_POST['q']:  (isset($_GET['q'])? $_GET['q']:null )) ;
-
-   //Suppression des espaces verticaux
-   $l = preg_replace('#\v#', '',$l);
-   //On vérifie que $p est un float
-   $p = floatval($p);
-
-   //On traite $q qui peut être un entier simple ou un tableau d'entiers
-    
-   if (is_array($q)){
-      $QteArticle = array();
-      $i=0;
-      foreach ($q as $contenu){
-         $QteArticle[$i++] = intval($contenu);
-      }
    }
-   else
-   $q = intval($q);
+
+   //récupération des variables en POST ou GET : Si il est set, on le met dans les variables et sinon alors on le met null 
+   $l = (isset($_GET['l'])? $_GET['l']:null ) ;
+   $p = (isset($_GET['p'])? $_GET['p']:null ) ;
+   $q = (isset($_GET['q'])? $_GET['q']:null ) ;
     
 }
 
@@ -44,19 +30,13 @@ if (!$erreur){
          supprimerArticle($l);
          break;
 
-      Case "refresh" :
-         for ($i = 0 ; $i < count($QteArticle) ; $i++)
-         {
-            modifierQTeArticle($_SESSION['panier']['libelleProduit'][$i],round($QteArticle[$i]));
-         }
-         break;
-
       Default:
          break;
    }
 }
 
-echo '<?xml version="1.0" encoding="utf-8"?>';?>
+?>
+
 <!DOCTYPE html>
 <head>
 <title>Votre panier</title>
@@ -69,39 +49,37 @@ echo '<?xml version="1.0" encoding="utf-8"?>';?>
         <td colspan="4">Votre panier</td>
     </tr>
     <tr>
-        <td>Libellé</td>
+        <td>Nom Album</td>
         <td>Quantité</td>
         <td>Prix Unitaire</td>
-        <td>Action</td>
+        <td> </td>
     </tr>
-
 
     <?php
 
     if (creationPanier())
     {
        $nbArticles=count($_SESSION['panier']['libelleProduit']);
-       if ($nbArticles <= 0)
-       echo "<tr><td>Votre panier est vide </ td></tr>";
+       if ($nbArticles <= 0){
+       echo "<tr><td>Votre panier est vide</td></tr>";
+   
+       }
        else
        {
           for ($i=0 ;$i < $nbArticles ; $i++)
           {
              echo "<tr>";
              echo "<td>".htmlspecialchars($_SESSION['panier']['libelleProduit'][$i])."</ td>";
-             echo "<td><input type=\"text\" size=\"4\" name=\"q[]\" value=\"".htmlspecialchars($_SESSION['panier']['qteProduit'][$i])."\"/></td>";
+             echo "<td>" .htmlspecialchars($_SESSION['panier']['qteProduit'][$i])."</td>";
              echo "<td>".htmlspecialchars($_SESSION['panier']['prixProduit'][$i])."</td>";
-             echo "<td><a href=\"".htmlspecialchars("panier.php?action=suppression&l=".rawurlencode($_SESSION['panier']['libelleProduit'][$i]))."\">Vider le panier</a></td>";
+             echo "<td><a href=\"".htmlspecialchars("panier.php?action=suppression&l=".rawurlencode($_SESSION['panier']['libelleProduit'][$i]))."\">Supprimer CD</a></td>";
              echo "</tr>";
           }
 
-          echo "<tr><td colspan=\"2\"> </td>";
-          echo "<td colspan=\"2\">";
-          echo "Total : ".MontantGlobal();
-          echo "</td></tr>";
-
-          echo "</td></tr>";
-
+          echo "<tr><td colspan='2'> </td>";
+          echo "<td colspan='2'>";
+          echo "Total : ".MontantGlobal() . " euros";
+          
        }
     }
 
@@ -111,7 +89,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>';?>
 
 <input type="button" onclick="window.location.href = '../index.php';" value="Accéder a l'accueil"/>
 
-<input type="button" onclick="window.location.href = 'commander.php';" value="Passer la commande"/>
+<button id="commande" onclick="window.location.href = 'commander.php' ;">Passer la commande</button>
 
 </body>
 </html>
