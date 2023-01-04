@@ -40,5 +40,8 @@ if (isset($_SESSION['login']) && isset($_SESSION['pwd'])) {
     echo ('</html>');
 
 }
+else {
+    header('location: pageConnexion.php');
+}
 ?>
 

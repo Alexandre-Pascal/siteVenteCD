@@ -18,7 +18,7 @@
         mysqli_close($link);
 
         //On affiche un message de réussite
-        header('Location: ./administration.php');
+        header('Location: ./supprimerCd.php');
 
     }
 ?>
