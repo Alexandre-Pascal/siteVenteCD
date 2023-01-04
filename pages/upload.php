@@ -21,13 +21,11 @@ if (isset($_POST['cd']) && isset($_POST['artiste']) && isset($_POST['genre']) &&
     move_uploaded_file($_FILES['vignette']['tmp_name'], '../vignettes/'.$vignette);
     //On ferme la connexion
     mysqli_close($link);
-    //On affiche un message de réussite
-    echo '<a href="insererCd.php">Renseignez un autre cd</a><br />';
-    // On affiche un lien pour fermer notre session
-    echo '<a href="logout.php">Déconnection</a>';
+    //On revient à la page d'administration
+    header('Location: ./administration.php');
 }
 else
 {
-    header('Location: ./insererCd.php');
+    header('Location: ./administration.php');
 }
 ?>
