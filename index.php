@@ -42,6 +42,8 @@
                         echo("<h2>" . $nom . "</h2>");
                         echo($auteur . "<br/><br/>");
                         echo($genre . "<br/>");
+
+                        echo("</div>");
                     };
 
                     echo("</section>");

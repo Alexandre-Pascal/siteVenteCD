@@ -111,5 +111,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>';?>
 
 <input type="button" onclick="window.location.href = '../index.php';" value="Accéder a l'accueil"/>
 
+<input type="button" onclick="window.location.href = 'commander.php';" value="Passer la commande"/>
+
 </body>
 </html>
