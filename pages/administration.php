@@ -5,12 +5,7 @@ session_start ();
 
 // On récupère nos variables de session
 if (isset($_SESSION['login']) && isset($_SESSION['pwd'])) {
-    echo ('<!DOCTYPE html>');
-    echo ('<html lang="fr">');
     echo ('<head>');
-        echo ('<meta charset="UTF-8">');
-        echo ('<meta http-equiv="X-UA-Compatible" content="IE=edge">');
-        echo ('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
         echo ('<title>Administration du site</title>');
     echo ('</head>');
         echo ('<body>');

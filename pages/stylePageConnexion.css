@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Poppins Black";
+}
+
+#id-connexion{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 2.5%;
+    border: 5px solid black;
+    border-radius: 25px;
+}
+
+input {
+    width: 100%;
+}
+
+button{
+    width: 100%;
+}

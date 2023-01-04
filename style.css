@@ -46,7 +46,7 @@ a:hover:not(.active){
 }
 
 #cd{
-    border: 5px solid rgb(0, 0, 0);
+    border: 5px solid black;
     border-radius: 10px;
     border-color: black;
     margin: 10px;
@@ -86,3 +86,5 @@ footer {
     width: 97%;
     margin: auto;
 }
+
+
