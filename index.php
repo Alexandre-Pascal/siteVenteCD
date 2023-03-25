@@ -1,10 +1,10 @@
 <?php
 
         //Accées à la base de donnée
-        $bdd= "robinalonzo_bd_cd_iut"; // Base de données
-        $host= "mysql-robinalonzo.alwaysdata.net";
-        $user= "294837_robin"; // Utilisateur
-        $pass= "iutbayonne"; // mp
+        $bdd= "alexandre-pascal_1486"; // Base de données
+        $host= "mysql-alexandre-pascal.alwaysdata.net";
+        $user= "305730_alex"; // Utilisateur
+        $pass= "Salutatoi1@"; // mp
 
         //Connexion à la base de donnée
         $link=mysqli_connect($host,$user,$pass,$bdd) or die( "Impossible de se connecter à la base de données");
@@ -64,7 +64,7 @@
                 echo ('<footer>');
                     echo ('<section id="footer-head">');
                         echo ('<p>Copyright : Robin Alonzo - Alexandre Pascal - 2023</p>');
-                        echo ('<p>Contact : ralonzo@univ-pau.fr - apascal03@univ-pau.fr</p>');
+                        echo ('<p>Contact : ralonzo@univ-pau.fr - apascal003@univ-pau.fr</p>');
                     echo ('</section>');
                 echo ('</footer>');
             echo('</body>');
